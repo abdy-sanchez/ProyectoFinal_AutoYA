@@ -20,17 +20,17 @@ func LoginHandler(w http.ResponseWriter, req *http.Request) {
 
 	passw := user.Password
 
-	db.DB.Where("email = ? AND password = ?", email, passw).First(&findUser)
+	db.DB.Where("email = ? AND password = ?", email, passw).First(&findUser) //de busca la exacta coincidencia dentro de la DB
 
 	if findUser.ID == 0 {
 
 		w.WriteHeader(http.StatusNotFound) //404
-		w.Write([]byte("Usuario no encontrado"))
+		w.Write([]byte("Credenciales invalidas"))
 
 		return
 	}
 
-	json.NewEncoder(w).Encode(&findUser)
+	json.NewEncoder(w).Encode(&findUser) //Se retorna toda la data del usuario logeado
 
 }
 
@@ -42,7 +42,7 @@ func RegisterHandler(w http.ResponseWriter, req *http.Request) {
 
 	//Guardado en DB
 
-	createdUser := db.DB.Create(&user)
+	createdUser := db.DB.Create(&user) //Se trata de guardar el usuario en DB
 
 	err := createdUser.Error
 
@@ -61,6 +61,6 @@ func UsersHandler(w http.ResponseWriter, req *http.Request) {
 
 	db.DB.Find(&users) //Buscamos toda la tabla Usuarios
 
-	json.NewEncoder(w).Encode(&users) //Retorna todas las filas de la tabla
+	json.NewEncoder(w).Encode(&users) //Retorna todas las filas y columnas de la tabla
 
 }

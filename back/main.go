@@ -9,6 +9,7 @@ import (
 	"github.com/abdy-sanchez/ProyectoFinal_AutoYA/models"
 	routesfuncs "github.com/abdy-sanchez/ProyectoFinal_AutoYA/routesFuncs"
 	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 )
 
 func main() {
@@ -40,14 +41,26 @@ func main() {
 	//Funcion para Buscar un carro en la DB
 	router.HandleFunc("/cars", routesfuncs.GetCarsHandler).Methods("GET")
 
+	//Funcion para Buscar un carro en la DB
+	router.HandleFunc("/cars/filter", routesfuncs.GetCarsHandlerFiltrado).Queries("marca", "{marca}").Methods("GET")
+
 	//Funcion para Reservar un carro
 	router.HandleFunc("/reservations", routesfuncs.ReservationsHandler).Methods("POST")
 
 	//Funcion para ver el reporte de reservas del usuario
 	router.HandleFunc("/report", routesfuncs.ReportHandler).Methods("POST")
 
+	//Cors
+	c := cors.New(cors.Options{
+		AllowedOrigins:   []string{"*"},
+		AllowCredentials: true,
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE"},
+	})
+
+	handler := c.Handler(router)
+
 	//Inicializacion del Servidor
 	log.Println("servidor en puerto :8080")
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(":8080", handler))
 
 }

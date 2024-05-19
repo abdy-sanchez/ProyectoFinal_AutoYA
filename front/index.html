@@ -10,7 +10,8 @@
         <title>𝐀𝐮𝐭𝐨𝐘𝐀 - 𝘙𝘦𝘴𝘦𝘳𝘷𝘢𝘴</title>
 
         <link rel="stylesheet" type="text/css" href="styles.css" />
-        <script src="script.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+        <script src="script_login_register.js" defer></script>
 
     </head>
 
@@ -38,7 +39,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <input type="submit" value="Login!" id="loginButton">
+                    <input type="button" value="Login!" id="loginButton">
                     <a id="registrate-a" href="#">No tienes una cuenta? Registrate</a>
                 </div>
 
@@ -49,7 +50,7 @@
 
                 <div class="form-group">
                     <label name="FullName"></label>
-                    <input type="text" name="FullName" class="input-name" placeholder="Tu Nombre">
+                    <input type="text" name="nombreUsuario" class="input-name" placeholder="Tu Nombre">
                 </div>
 
                 <div class="form-group">
@@ -65,12 +66,19 @@
                 
                 
                 <div class="form-group">
-                    <input type="submit" value="Registrame!" id="RegisterButton">
+                    <input type="button" value="Registrame!" id="RegisterButton">
                     <a id="logeate-a" href="#">Ya tienes una cuenta? Logeate</a>
                 </div>
 
             </form>
             
+            <div id="bad-creds">
+                <p>Credenciales Invalidas</p> 
+            </div>
+
+            <div id="user-registered">
+                <p>Usuario correctamente registrado!</p> 
+            </div>
 
         </div>
 

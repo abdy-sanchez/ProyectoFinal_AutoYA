@@ -16,4 +16,5 @@ type Carro struct {
 	Tipo          string `gorm:"not null" json:"tipo"`
 	Puertas       uint   `gorm:"not null" json:"puertas"`
 	ABS           bool   `gorm:"not null" json:"abs"`
+	Img           string `gorm:"not null" json:"img"`
 }

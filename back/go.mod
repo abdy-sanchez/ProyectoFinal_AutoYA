@@ -16,4 +16,6 @@ require (
 	golang.org/x/text v0.15.0 // indirect
 	gorm.io/driver/postgres v1.5.7 // indirect
 	gorm.io/gorm v1.25.10 // indirect
+	github.com/rs/cors v1.11.0
+
 )
