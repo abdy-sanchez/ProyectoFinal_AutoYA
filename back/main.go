@@ -42,10 +42,13 @@ func main() {
 	router.HandleFunc("/cars", routesfuncs.GetCarsHandler).Methods("GET")
 
 	//Funcion para Buscar un carro en la DB
-	router.HandleFunc("/cars/filter", routesfuncs.GetCarsHandlerFiltrado).Queries("marca", "{marca}").Methods("GET")
+	router.HandleFunc("/cars/filter", routesfuncs.GetCarsHandlerFiltrado).Queries("marca", "{marca}").Queries("tipo", "{tipo}").Queries("combustible", "{combustible}").Queries("transmision", "{transmision}").Methods("GET")
 
 	//Funcion para Reservar un carro
 	router.HandleFunc("/reservations", routesfuncs.ReservationsHandler).Methods("POST")
+
+	//Funcion para ELIMINAR una Reserva
+	router.HandleFunc("/reservations/delete", routesfuncs.DeleteReservationsHandler).Methods("DELETE")
 
 	//Funcion para ver el reporte de reservas del usuario
 	router.HandleFunc("/report", routesfuncs.ReportHandler).Methods("POST")
@@ -54,7 +57,7 @@ func main() {
 	c := cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"},
 		AllowCredentials: true,
-		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE"},
+		AllowedMethods:   []string{"GET", "POST", "PATCH", "DELETE", "PUT"},
 	})
 
 	handler := c.Handler(router)

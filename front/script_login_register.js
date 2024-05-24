@@ -122,10 +122,38 @@ async function LogeoUsuario(loginOBJCT) {
 
         badCreds.style.display = 'block';
 
+        Swal.fire({
+            title: "Algo salió mal...",
+            text: `Verifica las credenciales.`,
+            icon: "error"
+        });
+
     }else{
 
         badCreds.style.display = 'none';
-        alert(`Bienvenido, ${loginAttempt.nombreUsuario}!`)
+
+
+        sessionStorage.setItem('email',loginAttempt.email);
+        sessionStorage.setItem('nombreUsuario',loginAttempt.nombreUsuario);
+        sessionStorage.setItem('reservas',loginAttempt.reservas);
+
+        Swal.fire({
+            title: "Bienvenido,",
+            text: `${loginAttempt.nombreUsuario}!`,
+            icon: "success"
+        }).then((result)=>{
+
+            if (result.isConfirmed) {
+
+                window.location.assign('home.html');
+
+              }
+
+        })
+
+        
+
+        
     }
     
 };
@@ -160,6 +188,12 @@ async function RegistroUsuario(registerOBJCT) {
     if(registerAttempt){
 
         usrRegistered.style.display = 'block';      //Se se creó bien, muestra un texto que lo dice
+
+        Swal.fire({
+            title: "Usuario correctamente registrado!",
+            text: `Ya puedes logearte, ${registerAttempt.nombreUsuario}.`,
+            icon: "success"
+        });
     }
     
 };

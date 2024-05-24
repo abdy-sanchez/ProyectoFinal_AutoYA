@@ -21,12 +21,12 @@ func GetCarsHandler(w http.ResponseWriter, req *http.Request) {
 
 func GetCarsHandlerFiltrado(w http.ResponseWriter, req *http.Request) {
 
-	var car_filtrado []models.Carro
+	var findCar_filtrado []models.Carro
 
 	parametros := mux.Vars(req)
 
-	db.DB.Where("estado_reserva = ? AND marca = ?", false, parametros["marca"]).Find(&car_filtrado)
+	db.DB.Where(&models.Carro{Marca: parametros["marca"], Tipo: parametros["tipo"], Combustible: parametros["combustible"], Transmision: parametros["transmision"]}).Find(&findCar_filtrado)
 
-	json.NewEncoder(w).Encode(&car_filtrado)
+	json.NewEncoder(w).Encode(&findCar_filtrado)
 
 }
