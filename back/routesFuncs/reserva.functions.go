@@ -65,6 +65,43 @@ func DeleteReservationsHandler(w http.ResponseWriter, req *http.Request) {
 
 func ReportHandler(w http.ResponseWriter, req *http.Request) {
 
-	w.Write([]byte("Reporte"))
+	var reporte models.Reporte
+
+	var user models.Usuario //se debe buscar el usuario, sus reservas asociadas y luego
+	//iterar cada reserva para buscar la data de los carros
+	var precioAcumulado int64
+
+	precioAcumulado = 0
+
+	json.NewDecoder(req.Body).Decode(&user)
+
+	db.DB.First(&user)
+
+	if user.ID == 0 {
+
+		w.WriteHeader(http.StatusNotFound) //404
+		w.Write([]byte("Credenciales invalidas"))
+
+		return
+	}
+
+	db.DB.Model(&user).Association("Reservas").Find(&user.Reservas)
+
+	//se itera sobre la estructura de reservas
+
+	for _, reservation := range user.Reservas {
+
+		var carro models.Carro
+
+		db.DB.Where("carro_id = ?", reservation.Carro_ID).Find(&carro)
+
+		precioAcumulado += int64(carro.Precio)
+
+		reporte.Detalles = append(reporte.Detalles, carro)
+	}
+
+	reporte.PrecioTotal = precioAcumulado
+
+	json.NewEncoder(w).Encode(&reporte)
 
 }

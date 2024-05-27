@@ -30,7 +30,7 @@ func LoginHandler(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	db.DB.Model(&findUser).Association("Reservas").Find(&findUser.Reservas)
+	db.DB.Model(&findUser).Association("Reservas").Find(&findUser.Reservas) //Se asocian las reservas de un usuario especifico
 
 	json.NewEncoder(w).Encode(&findUser) //Se retorna toda la data del usuario logeado
 

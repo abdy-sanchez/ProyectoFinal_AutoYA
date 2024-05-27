@@ -25,7 +25,7 @@ func GetCarsHandlerFiltrado(w http.ResponseWriter, req *http.Request) {
 
 	parametros := mux.Vars(req)
 
-	db.DB.Where(&models.Carro{Marca: parametros["marca"], Tipo: parametros["tipo"], Combustible: parametros["combustible"], Transmision: parametros["transmision"]}).Find(&findCar_filtrado)
+	db.DB.Where(&models.Carro{Marca: parametros["marca"], Tipo: parametros["tipo"], Combustible: parametros["combustible"], Transmision: parametros["transmision"], ModeloNombre: parametros["ModeloNombre"]}).Find(&findCar_filtrado)
 
 	json.NewEncoder(w).Encode(&findCar_filtrado)
 

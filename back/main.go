@@ -42,7 +42,7 @@ func main() {
 	router.HandleFunc("/cars", routesfuncs.GetCarsHandler).Methods("GET")
 
 	//Funcion para Buscar un carro en la DB
-	router.HandleFunc("/cars/filter", routesfuncs.GetCarsHandlerFiltrado).Queries("marca", "{marca}").Queries("tipo", "{tipo}").Queries("combustible", "{combustible}").Queries("transmision", "{transmision}").Methods("GET")
+	router.HandleFunc("/cars/filter", routesfuncs.GetCarsHandlerFiltrado).Queries("marca", "{marca}").Queries("tipo", "{tipo}").Queries("combustible", "{combustible}").Queries("transmision", "{transmision}").Queries("ModeloNombre", "{ModeloNombre}").Methods("GET")
 
 	//Funcion para Reservar un carro
 	router.HandleFunc("/reservations", routesfuncs.ReservationsHandler).Methods("POST")
