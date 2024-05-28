@@ -135,7 +135,9 @@ async function LogeoUsuario(loginOBJCT) {
 
         sessionStorage.setItem('email',loginAttempt.email);
         sessionStorage.setItem('nombreUsuario',loginAttempt.nombreUsuario);
-        sessionStorage.setItem('reservas',loginAttempt.reservas);
+        sessionStorage.setItem('reservas',JSON.stringify(loginAttempt.reservas));
+        sessionStorage.setItem('usuarioID',loginAttempt.ID);
+        sessionStorage.setItem('password',loginAttempt.password);
 
         Swal.fire({
             title: "Bienvenido,",
