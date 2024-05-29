@@ -1,5 +1,5 @@
 
-let logOutButton = document.querySelector('[id="log-out"]');
+
     
 let newReservaButton = document.querySelector('[id="new-reservation-button"]');
 
@@ -7,28 +7,7 @@ let reportButton = document.querySelector('[id="generate-report-button"]');
 
 BeginPage();
 
-logOutButton.addEventListener("click",()=>{
 
-    Swal.fire({
-        title: "Estás a punto de salir...",
-        icon: "warning",
-        showCancelButton: true,
-        cancelButtonText: "Cancelar",
-
-    }).then((result)=>{
-
-        if (result.isConfirmed) {
-
-            sessionStorage.clear()
-
-            window.location.assign('index.html');
-
-        }
-
-    })
-
-
-})
 
 newReservaButton.addEventListener("click",()=>{
 
@@ -244,12 +223,8 @@ async function BeginPage(){
     await UpdateUserData();
     
     
-    let nombreUsuario = document.querySelector('[id="profile-name"]');
-    
     let reservationsArray = sessionStorage.getItem("reservas");
     
-    
-    nombreUsuario.innerHTML = `${sessionStorage.getItem("nombreUsuario")} <i class="fa-solid fa-circle-user"></i>`;
 
     DispalyReservas(reservationsArray);
 }
