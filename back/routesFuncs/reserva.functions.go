@@ -75,7 +75,7 @@ func ReportHandler(w http.ResponseWriter, req *http.Request) {
 
 	json.NewDecoder(req.Body).Decode(&user)
 
-	db.DB.First(&user)
+	db.DB.First(&user, "email = ?", user.Email)
 
 	if user.ID == 0 {
 

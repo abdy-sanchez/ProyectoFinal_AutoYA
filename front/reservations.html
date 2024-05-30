@@ -39,14 +39,51 @@
             <h3>Busca tu Carro favorito</h3>
             <div id="search-module">
                 <div id="criterios">
-                    <form id="parametros-search"></form>
+                    <form id="parametros-search">
+
+                        <div id="parametros-container">
+                            <div class="parametro">
+                                <div>
+                                    <label>Tipo</label>
+                                    <input name="tipo" type="text" placeholder="Ej: Hatchback" class="input-tipo">
+                                </div>
+                                <div>
+                                    <label>Marca</label>
+                                    <input name="marca" type="text" placeholder="Ej: Renault" class="input-marca">
+                                </div>
+                            </div>
+                            <div class="parametro">
+                                <div>
+                                    <label>Combustible</label>
+                                    <input name="combustible" type="text" placeholder="Ej: Gasolina" class="input-combustible">
+                                </div>
+                                <div>
+                                    <label>Transmision</label>
+                                    <input name="transmision" type="text" placeholder="Ej: Manual" class="input-transmision">
+                                </div>
+                            </div>
+                            <div class="parametro">
+                                <div>
+                                    <label>Nombre Modelo</label>
+                                    <input name="ModeloNombre" type="text" placeholder="Ej: Clio" class="input-name-modelo">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="buscar-container">
+                            <button id="buscar-button" type="button">Buscar   <i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+
+                    </form>
                 </div>
+                <p id="numero-results">Resultados: <span>0</span></p>
                 <div id="results"></div>
             </div>
 
         </div>
 
         <hr>
+        
 
         <footer>
             <p>

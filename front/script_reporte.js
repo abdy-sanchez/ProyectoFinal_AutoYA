@@ -50,6 +50,8 @@ async function GetReport(){
     
         })
 
+        payButton.style.display = 'none';
+
     }else{
 
         DisplayReportData(reporte);
