@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+  
+}
+
+h1{
+
+    font-family: 'Poppins',sans-serif;
+    font-weight:900;
+    font-style: normal;
+    font-size: 3em;
+}
+
+h2,h3{
+
+    font-family: 'Poppins',sans-serif;
+    font-weight:800;
+    font-style: normal;
+    font-size: 1.5em;
+
+}
+
+p,input,a,button,span,label,.swal2-html-container,[class*="car-"],#profile-name{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    font-style: normal;
+}
+
+[class="swal2-actions"] button{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    font-style: normal;
+}
+
+#swal2-title{
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.9em;
+}
+
+body{
+
+    background-image: linear-gradient(
+        60deg,
+        hsl(332deg 100% 87%) 0%,
+        hsl(322deg 83% 85%) 11%,
+        hsl(310deg 66% 82%) 22%,
+        hsl(294deg 58% 81%) 33%,
+        hsl(278deg 68% 81%) 44%,
+        hsl(262deg 78% 82%) 56%,
+        hsl(247deg 86% 83%) 67%,
+        hsl(232deg 95% 81%) 78%,
+        hsl(222deg 99% 77%) 89%,
+        hsl(213deg 100% 71%) 100%
+      ); 
+
+     
+   
+}
+
+
+footer{
+
+    padding: 1.2em;
+    text-align: center;
+    color: #ffff;   
+}
+
+hr{
+
+    border: 1px solid #fff; 
+    margin: 0.2em;
+}

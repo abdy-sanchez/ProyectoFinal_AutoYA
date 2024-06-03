@@ -1,0 +1,77 @@
+#log-conatiner{
+
+    display: flex;
+    justify-content: center;
+   
+
+}
+
+#main-card{
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-around;
+
+    border-radius: 28px;
+
+    padding: 1.5em;
+    margin: 2em;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 26em;
+}
+
+input[class*="input-"]{
+
+    margin: 0.2em;
+    padding: 0.6em;
+
+    border-radius: 10px;
+    border: none;
+}
+
+#user-registered p,#bad-creds p{
+
+    padding: 0.2em;
+    font-weight: 700;
+
+}
+
+a{
+    margin-top: 0.3em;
+    display: block;
+}
+
+.form-group{
+
+    margin: 0.7em;
+}
+
+span i{
+    font-size: 20px;
+}
+
+input[type="button"]{
+
+    font-weight: 700;
+
+    width: 8em;
+    height: 2.5em;
+
+    border-radius: 10px;
+
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+input[type="button"]:hover{
+
+    cursor: pointer;
+
+    background-color: rgba(0, 0, 0, 0.24);
+
+    transition: 0.5s;
+}
+
+

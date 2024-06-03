@@ -1,0 +1,80 @@
+h1{
+    padding-left: 0.4em;
+}
+
+#user-module-container{
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1em;
+}
+
+#user-module{
+
+    display: flex;
+    align-items: end;
+
+   flex-direction: column;
+
+   padding: 1em;
+
+   gap: 0.4em;
+
+   background-color: rgba(255, 255, 255, 0.3);
+   border-radius: 12px;
+
+}
+
+#profile-name{
+
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f659e;
+    
+}
+
+#profile-name i{
+
+    font-size: 25px;
+    color: #0f659e;
+}
+
+#log-out{
+
+    font-size: 12px;
+    font-weight: 700;
+
+    width: 8em;
+    height: 2.5em;
+
+    border-radius: 10px;
+
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+#log-out:hover{
+
+    cursor: pointer;
+
+    background-color: rgba(0, 0, 0, 0.24);
+
+    transition: 0.5s;
+}
+
+#home-icon{
+
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 0.5em;
+}
+
+#home-icon:hover{
+
+    background-color: #0f659e;
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+}

@@ -9,6 +9,9 @@
         <link rel="icon" href="media/icons8-car-100.png" type="image/x-icon" />
         <title>𝐀𝐮𝐭𝐨𝐘𝐀 - 𝘙𝘦𝘴𝘦𝘳𝘷𝘢𝘴</title>
 
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="stylesheet" type="text/css" href="home.styles.css" />
+
         <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://kit.fontawesome.com/b6d48c5acf.js" crossorigin="anonymous"></script>
@@ -19,13 +22,15 @@
 
     <body>
 
-        <h1>AutoYA</h1>
+        <div id="user-module-container">
+            <h1>AutoYA |</h1>
 
-        <div id="user-module">
+            <div id="user-module">
 
-            <div id="profile-name">Nombre Usuario</div>
-            <button id="log-out">Log-Out    <i class="fa-solid fa-right-from-bracket"></i></button>
+                <div id="profile-name">Nombre Usuario</div>
+                <button id="log-out">Log-Out    <i class="fa-solid fa-right-from-bracket"></i></button>
 
+            </div>
         </div>
 
         <hr>
@@ -35,6 +40,7 @@
             <div id="resumen">
 
                 <h2>Resumen Reservas</h2>
+          
                 <p>Resumen de tus reservas hasta el momento (también puedes eliminar una reserva desde aquí).</p>
 
                 <div id="resumen-container"></div>
@@ -45,18 +51,20 @@
 
                 <h2>Nueva Reserva <span><i class="fa-solid fa-circle-plus"></i></span></h2>
                 <p>¡Aquí puedes buscar un carro de tu elleción y crear una nueva reserva!</p>
+                <div class="image-button">
                 <div><img alt="icono +reserva" src="media/icons8-car-100.png"></div>
                 <button id="new-reservation-button">Reservar</button>
-
-            </div>
+                </div>
+            </div>  
 
             <div id="reporte">
 
                 <h2>Reporte <span><i class="fa-solid fa-receipt"></i></span></h2>
                 <p>¡Aquí puedes generar un reporte y saber cuánto tienes que pagar por tus reservas!</p>
+                <div class="image-button">
                 <div><img alt="icono reporte" src="media/icons8-magnetic-card-100.png"></div>
                 <button id="generate-report-button">Generar Reporte</button>
-                
+                </div>
             </div>
 
         </div>

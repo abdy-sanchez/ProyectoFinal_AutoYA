@@ -54,6 +54,7 @@ ButtonRegister.addEventListener("click",()=>{
 
     registerForm.style.display = 'block';
     loginForm.style.display = 'none';
+    badCreds.style.display = 'none';
 
 })
 
