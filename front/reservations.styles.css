@@ -78,3 +78,172 @@ h1{
     transition: 0.5s;
     cursor: pointer;
 }
+
+#modulo-reservations{
+
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    margin: 2em 25em 2em 25em;
+}
+
+#parametros-container{
+
+    margin: 1em;
+}
+
+#buscar-button{
+
+    font-size: 17x;
+    font-weight: 700;
+
+    width: 8em;
+    height: 2.5em;
+
+    border-radius: 10px;
+
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+}
+
+#buscar-button:hover{
+
+    background-color: #0f659e;
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#criterios{
+
+    margin: 0 0 1.5em 0;
+
+}
+
+#parametros-container{
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+}
+
+.parametro{
+
+    display: flex;
+    gap: 0.8em;
+    margin: 0.5em;
+}
+
+#buscar-container{
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 0.7em;
+}
+
+#numero-results, #numero-results span{
+
+    text-align: center;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    color: #012f4e;
+    font-style: italic;
+}
+
+label{
+
+    font-size: 18px;
+    font-weight: 600;
+    color: #470044;
+}
+
+input{
+
+    border: none;
+    padding: 0.7em;
+    background-color: rgba(146, 146, 146, 0.15);
+    text-decoration: underline;
+    border-radius: 10px;
+    color: rgba(0, 0, 0, 0.329);
+}
+
+
+#results{
+
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+    text-align: center;
+
+    margin: 1em 0 0.5em 0;
+    
+}
+
+.car-card{
+
+background-color: rgba(255, 255, 255, 0.678);
+border-radius: 15px;
+margin: 0.4em;
+padding: 0.8em;
+box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.reservar-button,.no-disponible-button{
+
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 0.5em;
+    font-weight: 800;
+    margin: 0.2em;
+    
+}
+
+.reservar-button:hover{
+
+    background-color: #1a6b06;
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+    border: 2px solid #000000;
+}
+
+.no-disponible-button:hover{
+
+    background-color: #5e0303;
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+    border: 2px solid #000000;
+}
+
+
+.car-ref-iamge{
+
+    border-radius: 13px;
+}
+
+.car-marca,.car-modelo-name,.car-modelo-year,.car-transmision,.car-combustible,.car-tipo,.car-puertas,.car-precio,.car-abs{
+
+    font-size: 14px;
+    margin: 0.2em;
+    font-weight: 700;
+}

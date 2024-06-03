@@ -93,7 +93,7 @@ async function ShowFilterResults(filterURL){
             <div class="car-tipo">Tipo: <span class="tipo-value">${carElement.tipo}</span></div>
             <div class="car-puertas">No. Puertas: <span class="puertas-value">${carElement.puertas}</span></div>
             <div class="car-precio">Precio: <span class="precio-value">${carElement.precio} $</span></div>
-            <div class="car-abs"><span class="abs-value">ABS: ${absBool}</span></div>`;
+            <div class="car-abs">ABS: <span class="abs-value">${absBool}</span></div>`;
 
             const reservaButton = document.createElement("button");
 
