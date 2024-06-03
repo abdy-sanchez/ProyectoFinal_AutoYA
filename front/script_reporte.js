@@ -104,8 +104,7 @@ function DisplayReportData(reportOBJCT){
                                         <div class="detail-textContent">
                                             <p class="detail-car-name">${carElement.marca} ${carElement.modeloNombre} (${carElement.modeloYear})</p>
                                         </div>
-                                        <p class="detail-p">${carElement.transmision} | ${carElement.precio} $</p>
-                                        <div>`;
+                                        <p class="detail-p">${carElement.transmision} | ${carElement.precio} $</p>`;
 
         cardContainer.appendChild(reservaResumenCard);
 
